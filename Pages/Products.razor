@@ -1,4 +1,4 @@
-﻿@page "/produtos"
+﻿@page "/produtos/{skip:int?}/{take:int?}"
 @using BlazingShop.Models
 @using BlazingShop.Pages.Components
 
@@ -6,8 +6,12 @@
 
 <h2>Produtos</h2>
 
-<ProductListComponent></ProductListComponent>
+<ProductListComponent Skip="@Skip" Take="@Take"></ProductListComponent>
 
 @code {
-    
+    [Parameter]
+    public int Skip { get; set; } = 0;
+
+    [Parameter]
+    public int Take { get; set; } = 25;
 }
