@@ -15,7 +15,7 @@ public class Product
 
     [Required(ErrorMessage = "O campo 'Preço' é obrigatório")]
     [DataType(DataType.Currency)]
-    [Range(0, 9999, ErrorMessage = "O campo 'Preço' deve estar entre 0 e 9999")]
+    [Range(1, 9999, ErrorMessage = "O campo 'Preço' deve estar entre 1 e 9999")]
     public decimal Price { get; set; }
 
     [Required(ErrorMessage = "O 'Id' da Categoria é obrigatório")]
