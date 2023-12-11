@@ -1,27 +1,13 @@
 ﻿@page "/produtos"
 @using BlazingShop.Models
+@using BlazingShop.Pages.Components
 
 <PageTitle>Produtos</PageTitle>
 
 <h2>Produtos</h2>
 
-<div>
-    <ul>
-        @foreach(var item in _products)
-        {
-            <li>@item.Name</li>
-        }
-    </ul>
-</div>
+<ProductListComponent></ProductListComponent>
 
 @code {
-    private List<Product> _products = new();
-
-    protected override async Task OnInitializedAsync()
-    {
-        await Task.Delay(5000);
-
-        for(int i = 0; i <= 25; i++)
-            _products.Add(new Product(i + 1, $"Produto {i}", $"Descrição do produto {i}", $"imagem-prod-{i}", i * 13.75M, 1));
-    }
+    
 }
